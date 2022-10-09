@@ -1,0 +1,18 @@
+// Importacion de mis variables/modificaciones.
+@import "./abstracts/variables";
+
+// Create your own map
+$custom-colors: (
+  "custom-color": rgb(96, 0, 212),
+  "custom-color-second": rgb(235, 85, 255)
+  );
+  
+// Importaciones necesarias para poder modificar y crear mis variables nuevas. Sino se crea un conflicto entre la compilacion de SASS y la asignacion de variables en Bootstrap por la propiedad !default.
+  @import "~bootstrap/scss/functions";
+  @import "~bootstrap/scss/variables";
+  @import "~bootstrap/scss/mixins";
+
+  // Merge the maps
+  $theme-colors: map-merge($theme-colors, $custom-colors);
+  
+  @import "~bootstrap/scss/bootstrap";
